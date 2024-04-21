@@ -11,7 +11,7 @@ public class Calculator implements ActionListener {
     private JPanel panel;
     JTextField textField;
     JButton[] numberButtons = new JButton[10];
-    JButton[] functiButtons = new JButton[8];
+    JButton[] functionButtons = new JButton[8];
     JButton addButton, subButton, mulButton, divButton;
     JButton decButton, equButton, delButton, clrButton;
 
@@ -54,14 +54,29 @@ public class Calculator implements ActionListener {
         delButton = new JButton("DEL");
         clrButton = new JButton("CLR");
 
-        functiButtons[0] = addButton;
-        functiButtons[1] = subButton;
-        functiButtons[2] = mulButton;
-        functiButtons[3] = divButton;
-        functiButtons[4] = decButton;
-        functiButtons[5] = equButton;
-        functiButtons[6] = delButton;
-        functiButtons[7] = clrButton;
+        functionButtons[0] = addButton;
+        functionButtons[1] = subButton;
+        functionButtons[2] = mulButton;
+        functionButtons[3] = divButton;
+        functionButtons[4] = decButton;
+        functionButtons[5] = equButton;
+        functionButtons[6] = delButton;
+        functionButtons[7] = clrButton;
+
+        // customise each of the function buttons
+        for (int i = 0; i < 8; i++) {
+            functionButtons[i].addActionListener(this);
+            functionButtons[i].setFont(myFont);
+            functionButtons[i].setFocusable(false);
+        }
+
+        // customise each of the number buttons
+        for (int i = 0; i < 10; i++) {
+            numberButtons[i] = new JButton(String.valueOf(i));
+            numberButtons[i].addActionListener(this);
+            numberButtons[i].setFont(myFont);
+            numberButtons[i].setFocusable(false);
+        }
 
         frame.add(textField);
 
