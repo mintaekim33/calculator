@@ -25,6 +25,8 @@ public class Calculator implements ActionListener {
 
         frame.setSize(420, 550);
         frame.setLayout(null);
+        // add some color
+        frame.getContentPane().setBackground(Color.GRAY);
 
         textField = new JTextField();
         textField.setBounds(50, 25, 300, 50);
