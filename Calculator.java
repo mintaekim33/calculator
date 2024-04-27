@@ -77,6 +77,7 @@ public class Calculator implements ActionListener {
         panel.setBounds(50, 100, 300, 300);
         panel.setLayout(new GridLayout(4, 4));
 
+        // add buttons
         panel.add(numberButtons[1]);
         panel.add(numberButtons[2]);
         panel.add(numberButtons[3]);
@@ -106,6 +107,7 @@ public class Calculator implements ActionListener {
 
     public static void main(String[] args) {
         System.out.println("Starting calculator...");
+        // initiate Calculator class
         Calculator calc = new Calculator();
     }
 
